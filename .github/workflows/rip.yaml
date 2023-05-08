@@ -11,15 +11,17 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Update README
-        run: echo "Hello" > README.md
+      - name: Render page
+        run: |
+          docker run --rm -v "$(pwd)":/data wkhtmltopdf/wkhtmltoimage:latest \
+          wkhtmltoimage --format png --quality 100 clock.html clock.png
 
       - name: Commit changes
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
-          git add README.md
-          git commit -m "Update README every minute"
+          git add clock.png
+          git commit -m "chore: clock update"
           git push origin main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
