@@ -14,7 +14,10 @@ jobs:
       - name: Install hkhtmltopdf
         run: |
           sudo apt-get update
-          sudo apt-get install -y wkhtmltopdf
+          sudo apt-get install -y \
+          xfonts-base \
+          xfonts-75dpi \
+          wkhtmltopdf
 
       - name: Render page
         run: |
