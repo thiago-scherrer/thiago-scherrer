@@ -21,7 +21,7 @@ jobs:
 
       - name: Render page
         run: |
-          wkhtmltoimage --format png --quality 100 clock.html clock.png
+          wkhtmltoimage --javascript-delay 1000 --format png --quality 100 clock.html clock.png
 
       - name: Commit changes
         run: |
