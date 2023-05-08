@@ -21,7 +21,6 @@ jobs:
 
       - name: Render page
         run: |
-wkhtmltopdf
           wkhtmltoimage --format png --quality 100 clock.html clock.png
 
       - name: Commit changes
