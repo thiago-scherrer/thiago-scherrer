@@ -2,7 +2,7 @@ name: climateclock
 
 on:
   schedule:
-    - cron: "*/1 * * * *"
+    - cron: "*/5 * * * *"
 
 jobs:
   update_readme:
@@ -21,7 +21,13 @@ jobs:
 
       - name: Render page
         run: |
-          wkhtmltoimage --javascript-delay 1000 --format png --quality 100 clock.html clock.png
+          wkhtmltoimage \
+          --transparent \
+          --minimum-font-size 80
+          --javascript-delay 3000 \
+          --format png \
+          --quality 100 \
+          clock.html clock.png
 
       - name: Commit changes
         run: |
