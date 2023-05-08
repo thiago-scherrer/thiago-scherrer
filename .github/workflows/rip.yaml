@@ -13,7 +13,9 @@ jobs:
 
       - name: Install hkhtmltopdf
         run: |
-          apt install wkhtmltoimage -y
+          sudo apt update
+          sudo apt search wkhtmltoimage
+          sudo apt install wkhtmltoimage -y
 
       - name: Render page
         run: |
