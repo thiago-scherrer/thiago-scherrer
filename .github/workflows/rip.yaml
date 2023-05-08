@@ -23,7 +23,7 @@ jobs:
         run: |
           wkhtmltoimage \
           --transparent \
-          --minimum-font-size 80
+          --minimum-font-size 80 \
           --javascript-delay 3000 \
           --format png \
           --quality 100 \
