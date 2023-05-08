@@ -11,9 +11,17 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Install hkhtmltopdf
+        run: |
+          URL=https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6.1-2/wkhtmltox_0.12.6.1-2.jammy_amd64.deb
+          sudo DEBIAN_FRONTEND=noninteractive apt-get install -qq \
+          xfonts-base \
+          xfonts-75dpi < /dev/null > /dev/nul
+          dpkg -i "${URL}"
+
       - name: Render page
         run: |
-          docker run --rm -v "$(pwd)":/data wkhtmltopdf/wkhtmltoimage:latest \
+wkhtmltopdf
           wkhtmltoimage --format png --quality 100 clock.html clock.png
 
       - name: Commit changes
