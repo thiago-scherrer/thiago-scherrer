@@ -1,0 +1,19 @@
+name: Climate Clock
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  climateclock:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Run Climate Clock action
+        uses: thiago-scherrer/climateclock-gh-action@main
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
