@@ -15,5 +15,3 @@ jobs:
 
       - name: Run Climate Clock action
         uses: thiago-scherrer/climateclock-gh-action@main
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
