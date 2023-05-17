@@ -2,7 +2,7 @@ name: Update Climate Clock
 
 on:
   schedule:
-    - cron: "*/3 * * * *"
+    - cron: "*/59 * * * *"
 
 jobs:
   update-clock:
