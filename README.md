@@ -1,3 +1,1 @@
-# TIME LEFT TO LIMIT GLOBAL WARMING TO 1.5C
-
-![clock](clock.png)
+![life](https://upload.wikimedia.org/wikipedia/commons/e/e5/Gospers_glider_gun.gif)
